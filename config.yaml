@@ -1,0 +1,49 @@
+# run with pandocomatic -i input -o docs -c config.yaml --modified-only --root-path PATH_TO_FOLDER
+settings:
+    skip: ["_*", ".*", "~$*.docx", "*.yaml"]
+    match-files: all
+templates:
+    word:
+        glob: ["*.md"]
+        pandoc:
+            from: markdown+raw_attribute+raw_tex
+            to: docx
+            use-extension: docx
+            reference-doc: templates/word.docx
+            lua-filter: filters/shortcodes.lua
+            #toc: true
+    html:
+        glob: ["*.md"]
+        pandoc:
+            from: markdown+raw_attribute+raw_tex
+            to: html
+            standalone: true
+            self-contained: true
+            toc: true
+            template: templates/html.html5
+            lua-filter: filters/shortcodes.lua
+    # github:
+    #     glob: ["*.md"]
+    #     extends: ['html']
+    #     pandoc:
+    #         output: index.html
+    index:
+        glob: ["index.txt"]
+        pandoc:
+            from: markdown+raw_attribute+raw_tex
+            to: html
+            standalone: true
+            self-contained: true
+            template: templates/html.html5
+            lua-filter: filters/shortcodes.lua
+    pdf:
+        glob: ["*.md"]
+        pandoc:
+            from: markdown+raw_attribute+raw_tex
+            to: pdf
+            standalone: true
+            self-contained: true
+            pdf-engine: lualatex
+            metadata-file: metadata.yaml
+            template: templates/latex.tex
+            lua-filter: filters/shortcodes.lua
