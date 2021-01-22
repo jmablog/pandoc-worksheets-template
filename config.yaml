@@ -11,6 +11,9 @@ templates:
             use-extension: docx
             reference-doc: templates/word.docx
             lua-filter: filters/shortcodes.lua
+            citeproc: true
+            bibliography: bib/references.bib
+            csl: bib/met.csl
             #toc: true
     html:
         glob: ["*.md"]
@@ -22,6 +25,9 @@ templates:
             toc: true
             template: templates/html.html5
             lua-filter: filters/shortcodes.lua
+            citeproc: true
+            bibliography: bib/references.bib
+            csl: bib/met.csl
     # github:
     #     glob: ["*.md"]
     #     extends: ['html']
@@ -36,6 +42,9 @@ templates:
             self-contained: true
             template: templates/html.html5
             lua-filter: filters/shortcodes.lua
+            citeproc: true
+            bibliography: bib/references.bib
+            csl: bib/met.csl
     pdf:
         glob: ["*.md"]
         pandoc:
@@ -47,3 +56,6 @@ templates:
             metadata-file: metadata.yaml
             template: templates/latex.tex
             lua-filter: filters/shortcodes.lua
+            citeproc: true
+            bibliography: bib/references.bib
+            csl: bib/met.csl
