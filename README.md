@@ -9,7 +9,7 @@ To build:
 3. In the terminal navigate into the project directory and either run `make` or, if you'd like to customise the build location, the full Pandocomatic command:
 
 ```
-pandocomatic -i input -o docs -c config.yaml --modified-only --data-dir PATH_TO_PROJECT_DIR
+pandocomatic -i src -o docs -c config.yaml --modified-only --data-dir PATH_TO_PROJECT_DIR
 ```
 
 Change `docs` to your desired output folder.
