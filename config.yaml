@@ -14,7 +14,6 @@ templates:
             citeproc: true
             bibliography: bib/references.bib
             csl: bib/met.csl
-            #toc: true
     html:
         glob: ["*.md"]
         pandoc:
