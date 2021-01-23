@@ -10,7 +10,7 @@ abstract: |
 
 \wordtoc
 
-## First section
+# First section
 
 TEXT HERE
 
@@ -22,10 +22,5 @@ BOXED CONTENT HERE
 
 \newpage
 
-## Answers to questions
+# References
 
-::: Questions
-
-Q1. QUESTION
-
-:::

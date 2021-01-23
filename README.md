@@ -1,12 +1,13 @@
-A series of Pandoc templates for [Pandoc](https://pandoc.org/) and [Pandocomatic](https://heerdebeer.org/Software/markdown/pandocomatic/) to convert Markdown into Word, HTML, and PDF formats. Also included is a [Pandoc lua filter](https://pandoc.org/lua-filters.html) to make use of some formatting shortcodes, namely `::: Aside` and `::: Questions` for alert and question boxes.
+A series of Pandoc templates for [Pandoc](https://pandoc.org/) and [Pandocomatic](https://heerdebeer.org/Software/markdown/pandocomatic/) to convert Markdown into Word, HTML, and PDF. Also included is a [Pandoc lua filter](https://pandoc.org/lua-filters.html) to make use of some formatting shortcodes, namely `::: Aside :::` and `::: Questions :::` for orange and grey pop-out boxes, `\wordtoc` for a Word table of contents, and `\newpage` for a manual page break.
 
 ## Creating the output formats
 
 To build:
 
-1. First make sure Pandoc and Pandocomatic are installed.
+1. Make sure Pandoc and Pandocomatic are installed and, for PDF, a valid Lualatex install. To make sure you have all the necessary Latex extensions and packages, I recommend using [Tex Live](https://tug.org/texlive/).
 2. You can edit some options for the PDF output in `src/metadata.yaml`.
-3. In the terminal navigate into the project directory and either run `make` or, if you'd like to customise the build location, the full Pandocomatic command:
+3. Put your source markdown documents (as `.md`) in the `src` folder. You can use sub-folders, and the directory structure in `src` will be duplicated in the output folder.
+4. In the terminal navigate into the project directory and either run `make` or, if you'd like to customise the build location, the full Pandocomatic command:
 
 ```
 pandocomatic -i src -o docs -c config.yaml --modified-only --data-dir PATH_TO_PROJECT_DIR
@@ -14,4 +15,4 @@ pandocomatic -i src -o docs -c config.yaml --modified-only --data-dir PATH_TO_PR
 
 Change `docs` to your desired output folder.
 
-**Note:** The templates, shortcodes, and metadata files are navigated to from the root project folder in the config.yaml file, which is set with the command `--root-path`. If you want to avoid using `root-path`, you can move them elsewhere - into your Pandoc data directory, for example - but you'll need to change their file location in config.yaml as well. I suggest checking out [this section in the Pandocomatic manual](https://heerdebeer.org/Software/markdown/pandocomatic/#specifying-paths) for help on specifying file paths in the config.
+**Note:** The templates, shortcodes, and metadata files are navigated to from the root project folder in the config.yaml file, which is set as Pandoc's data directory with the command `--data-dir` and automatically discovered if using `make`. If you want to avoid using `data-dir`, you can move them elsewhere - into your own Pandoc data directory, for example - but you'll need to change their file location in `config.yaml` as well. I suggest checking out [this section in the Pandocomatic manual](https://heerdebeer.org/Software/markdown/pandocomatic/#specifying-paths) for help on specifying file paths in the config.
