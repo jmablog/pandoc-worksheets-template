@@ -462,6 +462,32 @@ $endif$
 
 \usepackage[breakable]{tcolorbox}
 
+% resize headings =============================
+
+\makeatletter
+\renewcommand{\section}{\@startsection
+{section}%                   % the name
+{1}%                         % the level
+{\z@}%                       % the indent / 0mm
+{-\baselineskip}%            % the before skip / -3.5ex \@plus -1ex \@minus -.2ex
+{1.5\baselineskip}%          % the after skip / 2.3ex \@plus .2ex
+{\huge\bfseries}} % the style
+\renewcommand{\subsection}{\@startsection
+{subsection}%                   % the name
+{2}%                         % the level
+{\z@}%                       % the indent / 0mm
+{-\baselineskip}%            % the before skip / -3.5ex \@plus -1ex \@minus -.2ex
+{.75\baselineskip}%          % the after skip / 2.3ex \@plus .2ex
+{\Large\bfseries}} % the style
+\renewcommand{\subsubsection}{\@startsection
+{subsubsection}%                   % the name
+{3}%                         % the level
+{\z@}%                       % the indent / 0mm
+{-\baselineskip}%            % the before skip / -3.5ex \@plus -1ex \@minus -.2ex
+{.75\baselineskip}%          % the after skip / 2.3ex \@plus .2ex
+{\large\bfseries}} % the style
+\makeatother
+
 % ===================================================================================
 
 \begin{document}
@@ -477,14 +503,12 @@ $if(title)$
     \frame{\titlepage}
   $else$
     \maketitle
+    $if(abstract)$
+      $abstract$
+    $endif$
+    \newpage
   $endif$
 $endif$
-
-$if(abstract)$
-  $abstract$
-$endif$
-
-\newpage
 
 $for(include-before)$
 $include-before$
@@ -508,23 +532,20 @@ $if(colorlinks)$
 $endif$
 \setcounter{tocdepth}{$toc-depth$}
 \tableofcontents
+\newpage
 }
 $endif$
 $endif$
 
-\newpage
-
 $if(lot)$
 \listoftables
-$endif$
-
 \newpage
+$endif$
 
 $if(lof)$
 \listoffigures
-$endif$
-
 \newpage
+$endif$
 
 $if(has-frontmatter)$
 \mainmatter
