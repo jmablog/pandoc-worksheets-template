@@ -64,7 +64,7 @@ local function wordtoc(format)
   if format:match 'docx' then
     return pandoc.RawBlock('openxml', toccode.ooxml)
   elseif format:match 'latex' then
-    return pandoc.RawBlock('latex', '\\')
+    return pandoc.RawBlock('latex', '')
   end
 end
 
