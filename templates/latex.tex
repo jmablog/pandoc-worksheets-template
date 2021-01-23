@@ -464,6 +464,7 @@ $endif$
 
 % resize headings =============================
 
+$if(resize-headings)$
 \makeatletter
 \renewcommand{\section}{\@startsection
 {section}%                   % the name
@@ -487,6 +488,7 @@ $endif$
 {.75\baselineskip}%          % the after skip / 2.3ex \@plus .2ex
 {\large\bfseries}} % the style
 \makeatother
+$endif$
 
 % ===================================================================================
 

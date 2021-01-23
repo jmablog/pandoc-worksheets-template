@@ -9,3 +9,5 @@ hyperrefoptions:
 - pdfpagemode=FullScreen
 colorlinks: true
 toc: true
+toc-title: Contents
+resize-headings: false
