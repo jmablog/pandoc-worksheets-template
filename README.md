@@ -16,3 +16,7 @@ pandocomatic -i src -o docs -c config.yaml --modified-only --data-dir PATH_TO_PR
 Change `docs` to your desired output folder.
 
 **Note:** The templates, shortcodes, and metadata files are navigated to from the root project folder in the config.yaml file, which is set as Pandoc's data directory with the command `--data-dir` and automatically discovered if using `make`. If you want to avoid using `data-dir`, you can move them elsewhere - into your own Pandoc data directory, for example - but you'll need to change their file location in `config.yaml` as well. I suggest checking out [this section in the Pandocomatic manual](https://heerdebeer.org/Software/markdown/pandocomatic/#specifying-paths) for help on specifying file paths in the config.
+
+## Credit
+
+The html template used is gently adapted from the [GitHub Pandoc HTML5 template](https://htmlpreview.github.io/?https://github.com/tajmone/pandoc-goodies/blob/master/templates/html5/github/GitHub-Template-Preview.html) from the [pandoc-goodies](https://github.com/tajmone/pandoc-goodies) repository by Tristano Ajmone.
