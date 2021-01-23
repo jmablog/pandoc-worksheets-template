@@ -52,7 +52,7 @@ templates:
             standalone: true
             self-contained: true
             pdf-engine: lualatex
-            metadata-file: metadata.yaml
+            metadata-file: latex-options.yaml
             template: templates/latex.tex
             lua-filter: filters/shortcodes.lua
             citeproc: true

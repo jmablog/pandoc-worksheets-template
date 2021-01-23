@@ -1,10 +1,10 @@
 ---
 title: ''
 abstract: |
-    Abstract text.
+    Abstract text, indented by four spaces, will appear before the ToCs in all formats.
 
     ::: Questions
-    Grey box text.
+    Grey box text here.
     :::
 ---
 
@@ -16,7 +16,7 @@ TEXT HERE
 
 ::: Aside
 
-BOXED CONTENT HERE
+ORANGE BOXED CONTENT HERE
 
 :::
 

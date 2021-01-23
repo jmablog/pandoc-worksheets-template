@@ -5,8 +5,8 @@ A series of Pandoc templates for [Pandoc](https://pandoc.org/) and [Pandocomatic
 To build:
 
 1. Make sure Pandoc and Pandocomatic are installed and, for PDF, a valid Lualatex install. To make sure you have all the necessary Latex extensions and packages, I recommend using [Tex Live](https://tug.org/texlive/).
-2. You can edit some options for the PDF output in `src/metadata.yaml`.
-3. Put your source markdown documents (as `.md`) in the `src` folder. You can use sub-folders, and the directory structure in `src` will be duplicated in the output folder. Any file that starts with an underscore will be ignored - I find this useful to put images in (`_imgs`) so that they aren't copied over into the output, as they're not required when outputting using Pandoc's standalone option as these templates do. Any file in a directory named `index.txt` will be converted into just a `html` file - useful for building static site versions of your output that link to your various sub-documents.
+2. You can edit some Pandoc options for the PDF output in `src/metadata.yaml`. [See here](https://pandoc.org/MANUAL.html#variables-for-latex) for more details.
+3. Put your source markdown documents (as `.md`) in the `src` folder. You can use sub-folders, and the directory structure in `src` will be duplicated in the output folder. Any file that starts with an underscore will be ignored - I find this useful to put images in (`_imgs`) so that they aren't copied over into the output, as they're not required when outputting using Pandoc's standalone option as these templates do. Any file in a directory named `index.txt` will be converted into just a `html` file - useful for building static site versions of your output that link to your various sub-documents. See the included `_template.md` file for an example of how to use the included shortcodes.
 4. In the terminal navigate into the project directory and either run `make` or, if you'd like to customise the build location, the full Pandocomatic command:
 
 ```
