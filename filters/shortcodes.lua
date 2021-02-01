@@ -1,24 +1,16 @@
 function Div (elem)
   if FORMAT:match 'docx' then
-    if elem.classes[1] == "Aside" then
-      elem.attributes['custom-style'] = 'Aside'
-      return elem
-    elseif elem.classes[1] == "Questions" then
-      elem.attributes['custom-style'] = 'QuestionList'
+    if elem.classes[1] then
+      elem.attributes['custom-style'] = elem.classes[1]
       return elem
     else
       return elem
     end
   elseif FORMAT:match 'latex' then
-    if elem.classes[1] == "Aside" then
-      return {
-        pandoc.RawBlock('latex', '\\begin{tcolorbox}[breakable, colframe=Apricot!40!white, colback=Apricot!10!white, boxsep=2mm]'),
-        elem,
-        pandoc.RawBlock('latex', '\\end{tcolorbox}')
-      }
-    elseif elem.classes[1] == "Questions" then
-      return {
-        pandoc.RawBlock('latex', '\\begin{tcolorbox}[breakable, colframe=black!50!white, colback=black!3!white, boxsep=2mm]'),
+    if elem.classes[1] then
+      local drawBox = "\\begin{tcolorbox}[beforeafter skip=1cm, ignore nobreak=true, breakable, colframe=" .. elem.classes[1] .. "-frame, colback=" .. elem.classes[1] .. "-bg, boxsep=2mm, arc=0mm, boxrule=0.5mm]"
+      return{
+        pandoc.RawBlock('latex', drawBox),
         elem,
         pandoc.RawBlock('latex', '\\end{tcolorbox}')
       }
