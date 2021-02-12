@@ -7,6 +7,7 @@ hyperrefoptions:
 - linktoc=all
 - pdfwindowui
 - pdfpagemode=FullScreen
+linkcolor: black
 colorlinks: true
 toc: true
 toc-title: Contents
