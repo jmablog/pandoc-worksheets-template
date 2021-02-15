@@ -1,4 +1,34 @@
-A series of Pandoc templates for [Pandoc](https://pandoc.org/) and [Pandocomatic](https://heerdebeer.org/Software/markdown/pandocomatic/) to convert Markdown into Word, HTML, and PDF. Also included is a [Pandoc lua filter](https://pandoc.org/lua-filters.html) to make use of some formatting shortcodes, namely `::: Aside :::` and `::: Questions :::` for orange and grey pop-out boxes, `\wordtoc` for a Word table of contents, and `\newpage` for a manual page break.
+A series of Pandoc templates for [Pandoc](https://pandoc.org/) and [Pandocomatic](https://heerdebeer.org/Software/markdown/pandocomatic/) to convert Markdown into Word, HTML, and PDF. Also included is a [Pandoc lua filter](https://pandoc.org/lua-filters.html) to make use of some formatting shortcodes.
+
+## Features
+
+**Pop-out boxes:** Use Pandoc's fenced divs feature to create orange and grey pop-out boxes:
+
+```
+::: Aside
+
+Your contents here. These will appear in an orange pop-out box.
+
+:::
+
+::: Questions
+
+Other contents here. These will appear in grey pop-out boxes.
+
+:::
+```
+
+**LaTeX shortcuts:** Use `\wordtoc` to insert a Word table of contents, and `\newpage` for a manual page break.
+
+**Auto-link questions and answers:** Use Pandoc's bracketed spans feature to create linked questions and answers using Q<number> and A<number>:
+
+```
+[Q1]{}. The number of this question will be linked to A1 wherever it appears on the page.
+
+...
+
+[A1]{}. This answer is linked to Q1 above.
+```
 
 ## Creating the output formats
 
@@ -20,3 +50,5 @@ Change `docs` to your desired output folder.
 ## Credit
 
 The html template used is gently adapted from the [GitHub Pandoc HTML5 template](https://htmlpreview.github.io/?https://github.com/tajmone/pandoc-goodies/blob/master/templates/html5/github/GitHub-Template-Preview.html) from the [pandoc-goodies](https://github.com/tajmone/pandoc-goodies) repository by Tristano Ajmone.
+
+Pandoc lua filters are inspired and adapted from examples given in the Pandoc [lua filters GitHub repo](https://github.com/pandoc/lua-filters).
